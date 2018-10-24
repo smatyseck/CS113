@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
 
-    public GameObject player;
     public GameObject otherPlayer;
+    public float jumpForce;
     // What is the maximum speed we want Bob to walk at
-    private float maxSpeed = 5f;
+    public float maxSpeed = 5f;
 
     // Start facing right (like the sprite-sheet)
     private bool facingLeft = false;
@@ -16,61 +17,66 @@ public class PlayerMovement : MonoBehaviour
     // This will be a reference to the RigidBody2D 
     // component in the Player object
     private Rigidbody2D rb;
-    private Rigidbody2D rb2;
 
     // This is a reference to the Animator component
     private Animator anim;
-    private Animator anim2;
-    private bool jumping = false;
-    public float jumpForce;
-
+    private bool grounded = false;
 
     // We initialize our two references in the Start method
     void Start()
     {
-        rb = player.GetComponent<Rigidbody2D>();
-        anim = player.GetComponent<Animator>();
-
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
-    // We use FixedUpdate to do all the animation work
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        grounded = true;
+    }
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        grounded = true;
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        grounded = false;
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Reset"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetButtonDown("Swap"))
         {
             swap();
         }
-        if (Input.GetButtonDown("Jump") && !jumping)
+
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             rb.AddForce(Vector2.up * jumpForce);
-            jumping = true;
-        }
-        // Get the extent to which the player is currently pressing left or right
-        float h = Input.GetAxis("Horizontal");
-        if (rb.velocity.y > 0)
-        {
-            anim.SetBool("jump", true);
-        }
-        if (rb.velocity.y < 0)
-        {
-            anim.SetBool("falling", true);
-        }
-        else if (Mathf.Abs(rb.velocity.y) < 0.1)
-        {
-            jumping = false;
-            anim.SetBool("jump", false);
-            anim.SetBool("falling", false);
-            rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
-            anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
-            
         }
 
-        // Check which way the player is facing 
-        // and call reverseImage if neccessary
-        if (h < 0 && !facingLeft)
-            reverseImage();
-        else if (h > 0 && facingLeft)
-            reverseImage();
+        if (grounded)
+        {
+            // Get the extent to which the player is currently pressing left or right
+            float h = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
+            // Check which way the player is facing 
+            // and call reverseImage if neccessary
+            if (h < 0 && !facingLeft)
+                reverseImage();
+            else if (h > 0 && facingLeft)
+                reverseImage();
+        }
+
+        anim.SetBool("grounded", grounded);
+        anim.SetFloat("speedY", rb.velocity.y);
+        anim.SetFloat("speed", Mathf.Abs(rb.velocity.x));
+        Debug.Log(grounded);
 
     }
 
@@ -95,5 +101,6 @@ public class PlayerMovement : MonoBehaviour
         rb.position = pos2;
         otherPlayer.GetComponent<Rigidbody2D>().position = pos1;
     }
+
 }
  
