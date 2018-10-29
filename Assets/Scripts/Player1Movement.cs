@@ -10,6 +10,8 @@ public class Player1Movement : MonoBehaviour
     public GameObject player2;
     public float jumpForce = 350;
     public GameObject readytext;
+    public GameObject pausemenu;
+
     // What is the maximum speed we want Bob to walk at
     public float maxSpeed = 5f;
 
@@ -24,7 +26,7 @@ public class Player1Movement : MonoBehaviour
     private Animator anim;
     private bool grounded = false;
     private bool ready = false;
-
+    
     public bool IsReady()
     {
         return ready;
@@ -37,6 +39,7 @@ public class Player1Movement : MonoBehaviour
 
     void Start()
     {
+        pausemenu.SetActive(false);
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
     }
@@ -57,6 +60,12 @@ public class Player1Movement : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Time.timeScale = 0f;
+            pausemenu.SetActive(true);
+        }
+
         if (Input.GetButtonDown("Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
