@@ -22,8 +22,11 @@ public class Player2Movement : MonoBehaviour
 
     // This is a reference to the Animator component
     private Animator anim;
-    private bool grounded = false;
+    public bool grounded = false;
     private bool ready = false;
+
+	//Checkpoint Tracking
+	public GameObject checkpoint;
 
     public bool IsReady()
     {
@@ -43,6 +46,15 @@ public class Player2Movement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+		if (col.tag == "Checkpoint") 
+		{
+			checkpoint = col.gameObject;
+		}
+		if (col.tag == "Zapper") 
+		{
+			print ("zapped");
+			this.transform.position = checkpoint.transform.position;
+		}
         grounded = true;
     }
 
@@ -52,6 +64,7 @@ public class Player2Movement : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D col)
     {
+		print ("bye");
         grounded = false;
     }
 

@@ -27,27 +27,38 @@ public class Player1Movement : MonoBehaviour
     private bool grounded = false;
     private bool ready = false;
     
-    public bool IsReady()
-    {
-        return ready;
-    }
+	//Checkpoint Tracking
+	public GameObject checkpoint;
 
-    public void SetReady(bool r)
-    {
-        ready = r;
-    }
+	public bool IsReady()
+	{
+		return ready;
+	}
 
-    void Start()
-    {
-        pausemenu.SetActive(false);
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        anim = gameObject.GetComponent<Animator>();
-    }
+	public void SetReady(bool r)
+	{
+		ready = r;
+	}
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        grounded = true;
-    }
+	void Start()
+	{
+		rb = gameObject.GetComponent<Rigidbody2D>();
+		anim = gameObject.GetComponent<Animator>();
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.tag == "Checkpoint") 
+		{
+			checkpoint = col.gameObject;
+		}
+		if (col.tag == "Zapper") 
+		{
+			print ("zapped");
+			this.transform.position = checkpoint.transform.position;
+		}
+		grounded = true;
+	}
 
     void OnTriggerStay2D(Collider2D col)
     {
