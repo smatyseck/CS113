@@ -22,7 +22,7 @@ public class Player2Movement : MonoBehaviour
 
     // This is a reference to the Animator component
     private Animator anim;
-    public bool grounded = false;
+    private bool grounded = false;
     private bool ready = false;
 
 	//Checkpoint Tracking
@@ -48,6 +48,10 @@ public class Player2Movement : MonoBehaviour
     {
 		if (col.tag == "Checkpoint") 
 		{
+            if (col.gameObject != checkpoint)
+            {
+                checkpoint.GetComponent<CheckpointController>().Deactivate();
+            }
 			checkpoint = col.gameObject;
 		}
 		if (col.tag == "Zapper") 
@@ -55,17 +59,25 @@ public class Player2Movement : MonoBehaviour
 			print ("zapped");
 			this.transform.position = checkpoint.transform.position;
 		}
-        grounded = true;
+        if (col.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
 
     void OnTriggerStay2D(Collider2D col)
     {
-        grounded = true;
+        if (col.tag == "Ground")
+        { 
+            grounded = true;
+        }
     }
     void OnTriggerExit2D(Collider2D col)
     {
-		print ("bye");
-        grounded = false;
+        if (col.tag == "Ground")
+        {
+            grounded = false;
+        }
     }
 
     void Update()
@@ -89,6 +101,11 @@ public class Player2Movement : MonoBehaviour
                 text.text = "Player 2 is Ready to Swap\n3";
                 readytext.SetActive(true);
             }
+        }
+
+        if (Input.GetButtonDown("LastCheckpoint2"))
+        {
+            rb.position = checkpoint.transform.position;
         }
 
         if (Input.GetButtonDown("Jump2") && grounded)
@@ -140,6 +157,10 @@ public class Player2Movement : MonoBehaviour
 
         rb.position = pos2;
         player1.GetComponent<Rigidbody2D>().position = pos1;
+        //Swap Checkpoints as well
+        GameObject c = player1.GetComponent<Player1Movement>().checkpoint;
+        player1.GetComponent<Player1Movement>().checkpoint = checkpoint;
+        checkpoint = c;
     }
 
 }

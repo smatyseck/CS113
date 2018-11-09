@@ -21,10 +21,10 @@ GameObject:
   - component: {fileID: 4629412149745108}
   - component: {fileID: 212911488460558630}
   - component: {fileID: 61043375700861632}
-  - component: {fileID: 114149775699773726}
+  - component: {fileID: 114917488685185216}
   m_Layer: 0
   m_Name: Checkpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880650501000714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.73, y: 12.81, z: -0.1}
+  m_LocalPosition: {x: -8.16, y: 12.81, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,20 +54,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00000023841858, y: 0.16146278}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1}
-    newSize: {x: 1.5, y: 1}
+    oldSize: {x: 0.48, y: 0.32}
+    newSize: {x: 0.48, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1}
+  m_Size: {x: 0.74650717, y: 1.6182137}
   m_EdgeRadius: 0
---- !u!114 &114149775699773726
+--- !u!114 &114917488685185216
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,11 +75,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1880650501000714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f85da2349687ac04bbd56ace61c3d5bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 4594d19a738430e43ad1b10016fa3f70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inactivePlatform: {fileID: 21300000, guid: 967425a0649495149b3db4a68a05b6ae, type: 3}
-  activePlatform: {fileID: 21300000, guid: 4d08e9ae568d1f6469b5415de6c054de, type: 3}
+  inactivePlatform: {fileID: 21300000, guid: 5dc1c05547f1af64898629694781fdbe, type: 3}
+  activePlatform: {fileID: 21300000, guid: e6238697f3202fc4eb2a1b4dca7dbb59, type: 3}
   activated: 0
 --- !u!212 &212911488460558630
 SpriteRenderer:
@@ -116,12 +116,12 @@ SpriteRenderer:
   m_SortingLayerID: -1594375381
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 967425a0649495149b3db4a68a05b6ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dc1c05547f1af64898629694781fdbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.5, y: 1}
+  m_Size: {x: 0.48, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

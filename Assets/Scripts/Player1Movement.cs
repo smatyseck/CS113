@@ -46,27 +46,36 @@ public class Player1Movement : MonoBehaviour
 		anim = gameObject.GetComponent<Animator>();
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		if (col.tag == "Checkpoint") 
-		{
-			checkpoint = col.gameObject;
-		}
-		if (col.tag == "Zapper") 
-		{
-			print ("zapped");
-			this.transform.position = checkpoint.transform.position;
-		}
-		grounded = true;
-	}
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Checkpoint")
+        {
+            checkpoint = col.gameObject;
+        }
+        if (col.tag == "Zapper")
+        {
+            print("zapped");
+            this.transform.position = checkpoint.transform.position;
+        }
+        if (col.tag == "Ground")
+        {
+            grounded = true;
+        }
+    }
 
     void OnTriggerStay2D(Collider2D col)
     {
-        grounded = true;
+        if (col.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
     void OnTriggerExit2D(Collider2D col)
     {
-        grounded = false;
+        if (col.tag == "Ground")
+        {
+            grounded = false;
+        }
     }
 
     void Update()
@@ -80,6 +89,11 @@ public class Player1Movement : MonoBehaviour
         if (Input.GetButtonDown("Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetButtonDown("LastCheckpoint"))
+        {
+            rb.position = checkpoint.transform.position;
         }
 
         if (Input.GetButtonDown("Swap"))
@@ -145,7 +159,11 @@ public class Player1Movement : MonoBehaviour
         Vector2 pos2 = player2.GetComponent<Rigidbody2D>().position;
 
         rb.position = pos2;
+        //Swap Checkpoints as well
         player2.GetComponent<Rigidbody2D>().position = pos1;
+        GameObject c = player2.GetComponent<Player2Movement>().checkpoint;
+        player2.GetComponent<Player2Movement>().checkpoint = checkpoint;
+        checkpoint = c;
     }
 
 }

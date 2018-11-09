@@ -20,12 +20,19 @@ public class CheckpointController : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2d(Collider2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		print("collision detected");
 		if (other.tag == "Player") {
 			mySpriteRenderer.sprite = activePlatform;
 			activated = true;
 		}
 	}
+
+    public void Deactivate()
+    {
+        mySpriteRenderer.sprite = inactivePlatform;
+        activated = false;
+    }
+
+
 }
