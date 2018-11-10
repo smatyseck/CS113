@@ -1490,6 +1490,12 @@ Prefab:
       propertyPath: checkpoint
       value: 
       objectReference: {fileID: 8887900}
+    - target: {fileID: 212714081482290066, guid: 1750e7c4c6474e2488c518b3ac3e8cfa,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300016, guid: 47c3eeb6d78c6a246923090a4226f248,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1750e7c4c6474e2488c518b3ac3e8cfa, type: 2}
   m_IsPrefabAsset: 0
@@ -3027,12 +3033,22 @@ Prefab:
     - target: {fileID: 20362234750176942, guid: d82bbbb6e1a850645b5c3528e6726a84,
         type: 2}
       propertyPath: orthographic size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 20413531524854368, guid: d82bbbb6e1a850645b5c3528e6726a84,
         type: 2}
       propertyPath: orthographic size
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114343725311236044, guid: d82bbbb6e1a850645b5c3528e6726a84,
+        type: 2}
+      propertyPath: distance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114275498159129084, guid: d82bbbb6e1a850645b5c3528e6726a84,
+        type: 2}
+      propertyPath: distance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d82bbbb6e1a850645b5c3528e6726a84, type: 2}
@@ -3681,6 +3697,12 @@ Prefab:
       propertyPath: jumpForce
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 212412228881042570, guid: 8a7687cbf7d29d54b848299b1857ea6c,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300028, guid: 47c3eeb6d78c6a246923090a4226f248,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a7687cbf7d29d54b848299b1857ea6c, type: 2}
   m_IsPrefabAsset: 0
