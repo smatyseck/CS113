@@ -1470,6 +1470,26 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 114840555264448800, guid: 1750e7c4c6474e2488c518b3ac3e8cfa,
+        type: 2}
+      propertyPath: pausemenu
+      value: 
+      objectReference: {fileID: 86711406}
+    - target: {fileID: 114840555264448800, guid: 1750e7c4c6474e2488c518b3ac3e8cfa,
+        type: 2}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 548549242}
+    - target: {fileID: 114840555264448800, guid: 1750e7c4c6474e2488c518b3ac3e8cfa,
+        type: 2}
+      propertyPath: readytext
+      value: 
+      objectReference: {fileID: 1005825904}
+    - target: {fileID: 114840555264448800, guid: 1750e7c4c6474e2488c518b3ac3e8cfa,
+        type: 2}
+      propertyPath: checkpoint
+      value: 
+      objectReference: {fileID: 8887900}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1750e7c4c6474e2488c518b3ac3e8cfa, type: 2}
   m_IsPrefabAsset: 0
@@ -3004,6 +3024,16 @@ Prefab:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 548549242}
+    - target: {fileID: 20362234750176942, guid: d82bbbb6e1a850645b5c3528e6726a84,
+        type: 2}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 20413531524854368, guid: d82bbbb6e1a850645b5c3528e6726a84,
+        type: 2}
+      propertyPath: orthographic size
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d82bbbb6e1a850645b5c3528e6726a84, type: 2}
   m_IsPrefabAsset: 0
