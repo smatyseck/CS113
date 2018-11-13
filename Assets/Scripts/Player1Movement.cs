@@ -9,6 +9,7 @@ public class Player1Movement : MonoBehaviour
 
     public GameObject player2;
     public float jumpForce = 350;
+    public float sprintMod = 1.5f;
     public GameObject readytext;
     public GameObject pausemenu;
 
@@ -100,6 +101,8 @@ public class Player1Movement : MonoBehaviour
         {
             if (player2.GetComponent<Player2Movement>().IsReady())
             {
+                ready = false;
+                player2.GetComponent<Player2Movement>().SetReady(false);
                 swap();
                 readytext.SetActive(false);
             }
@@ -116,16 +119,17 @@ public class Player1Movement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
         }
 
-        if (Input.GetButton("Sprint"))
-        {
-            maxSpeed = 10f;
-        }
-
         if (grounded)
         {
             // Get the extent to which the player is currently pressing left or right
-            float h = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
+            float h = Input.GetAxis("Horizontal");          
+            if (Input.GetButton("Sprint"))
+            {
+                rb.velocity = new Vector2(h * maxSpeed * sprintMod, rb.velocity.y);
+            } else
+            {
+                rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
+            }
             // Check which way the player is facing 
             // and call reverseImage if neccessary
             if (h < 0 && !facingLeft)

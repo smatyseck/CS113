@@ -12,6 +12,7 @@ public class Player2Movement : MonoBehaviour
     public GameObject readytext;
     // What is the maximum speed we want Bob to walk at
     public float maxSpeed = 5f;
+    public float sprintMod = 1.5f;
 
     // Start facing right (like the sprite-sheet)
     private bool facingLeft = false;
@@ -91,6 +92,8 @@ public class Player2Movement : MonoBehaviour
         {
             if (player1.GetComponent<Player1Movement>().IsReady())
             {
+                ready = false;
+                player1.GetComponent<Player1Movement>().SetReady(false);
                 swap();
                 readytext.SetActive(false);
             }
@@ -113,16 +116,18 @@ public class Player2Movement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
         }
 
-        if (Input.GetButton("Sprint2"))
-        {
-            maxSpeed = 10f;
-        }
-
         if (grounded)
         {
             // Get the extent to which the player is currently pressing left or right
             float h = Input.GetAxis("Horizontal2");
-            rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
+            if (Input.GetButton("Sprint2"))
+            {
+                rb.velocity = new Vector2(h * maxSpeed * sprintMod, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
+            }
             // Check which way the player is facing 
             // and call reverseImage if neccessary
             if (h < 0 && !facingLeft)
