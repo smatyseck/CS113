@@ -11,7 +11,6 @@ public class CheckpointController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print("CheckpointController Active");
 		mySpriteRenderer = this.GetComponent<SpriteRenderer> ();
 	}
 	

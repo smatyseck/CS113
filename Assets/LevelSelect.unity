@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausemenu: {fileID: 0}
-  selectedlevel: Level1
 --- !u!114 &347404834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535393830}
   m_Layer: 5
-  m_Name: MainMenu
+  m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -884,7 +883,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausemenu: {fileID: 0}
-  selectedlevel: Level1
 --- !u!114 &1539158332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,7 +1019,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausemenu: {fileID: 0}
-  selectedlevel: Level1
 --- !u!114 &1756875244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1039,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
