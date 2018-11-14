@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
+
 
 public class Player1Movement : MonoBehaviour
 {
@@ -55,8 +57,8 @@ public class Player1Movement : MonoBehaviour
         }
         if (col.tag == "Zapper")
         {
-            print("zapped");
             this.transform.position = checkpoint.transform.position;
+            rb.velocity = new Vector2(0, 0);
         }
         if (col.tag == "Ground")
         {
@@ -81,6 +83,10 @@ public class Player1Movement : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
         if (Input.GetButtonDown("Cancel"))
         {
             Time.timeScale = 0f;
@@ -122,14 +128,39 @@ public class Player1Movement : MonoBehaviour
         if (grounded)
         {
             // Get the extent to which the player is currently pressing left or right
-            float h = Input.GetAxis("Horizontal");          
+            float h = Input.GetAxis("Horizontal");
+            if (Math.Abs(h) < 0.1f)
+            {
+                h = 0;
+            }
+            float newspeed = 0;
+            if ((rb.velocity.x > 0 && h < 0) || (rb.velocity.x < 0 && h > 0))
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+            float limitSpeed = maxSpeed;
             if (Input.GetButton("Sprint"))
             {
-                rb.velocity = new Vector2(h * maxSpeed * sprintMod, rb.velocity.y);
+                limitSpeed = maxSpeed * sprintMod;
+                newspeed = rb.velocity.x + (h * limitSpeed) / 5;
             } else
             {
-                rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
+                newspeed = rb.velocity.x + (h * limitSpeed) / 5;
             }
+            if (newspeed > limitSpeed)
+            {
+                newspeed = limitSpeed;
+            }
+            else if (newspeed < -1 * limitSpeed)
+            {
+                newspeed = -1 * limitSpeed;
+            }
+            if (h == 0)
+            {
+                //Slow down quicker than accelerate
+                newspeed = 0f;
+            }
+            rb.velocity = new Vector2(newspeed, rb.velocity.y);
             // Check which way the player is facing 
             // and call reverseImage if neccessary
             if (h < 0 && !facingLeft)

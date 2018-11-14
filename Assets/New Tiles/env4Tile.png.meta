@@ -158,7 +158,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 170
-        width: 33
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -248,26 +248,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7b2e2a9b991df9b42a881a804121cf50
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: env4Tile_8
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 170
-        width: 7
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57fd09ea314758742b54ba811ac875a4
       vertices: []
       indices: 
       edges: []
