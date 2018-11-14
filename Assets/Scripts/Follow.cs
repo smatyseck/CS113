@@ -9,7 +9,8 @@ public class Follow : MonoBehaviour
     public float speed = 2.0f;
     public float distance;
 
-    void Update()
+    // LateUpdate applies after physics / rigidbody related stuff happens
+    void LateUpdate()
     {
         float interpolation = speed * Time.deltaTime;
 

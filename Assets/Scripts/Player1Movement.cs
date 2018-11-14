@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
+
 
 public class Player1Movement : MonoBehaviour
 {
 
     public GameObject player2;
     public float jumpForce = 350;
+    public float sprintMod = 1.5f;
     public GameObject readytext;
+    public GameObject pausemenu;
+
     // What is the maximum speed we want Bob to walk at
     public float maxSpeed = 5f;
 
@@ -24,48 +29,86 @@ public class Player1Movement : MonoBehaviour
     private Animator anim;
     private bool grounded = false;
     private bool ready = false;
+    
+	//Checkpoint Tracking
+	public GameObject checkpoint;
 
-    public bool IsReady()
-    {
-        return ready;
-    }
+	public bool IsReady()
+	{
+		return ready;
+	}
 
-    public void SetReady(bool r)
-    {
-        ready = r;
-    }
+	public void SetReady(bool r)
+	{
+		ready = r;
+	}
 
-    void Start()
-    {
-        rb = gameObject.GetComponent<Rigidbody2D>();
-        anim = gameObject.GetComponent<Animator>();
-    }
+	void Start()
+	{
+		rb = gameObject.GetComponent<Rigidbody2D>();
+		anim = gameObject.GetComponent<Animator>();
+	}
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        grounded = true;
+        if (col.tag == "Checkpoint")
+        {
+            checkpoint = col.gameObject;
+        }
+        if (col.tag == "Zapper")
+        {
+            this.transform.position = checkpoint.transform.position;
+            rb.velocity = new Vector2(0, 0);
+        }
+        if (col.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
 
     void OnTriggerStay2D(Collider2D col)
     {
-        grounded = true;
+        if (col.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
     void OnTriggerExit2D(Collider2D col)
     {
-        grounded = false;
+        if (col.tag == "Ground")
+        {
+            grounded = false;
+        }
     }
 
     void Update()
     {
+        if (Time.timeScale == 0f)
+        {
+            return;
+        }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Time.timeScale = 0f;
+            pausemenu.SetActive(true);
+        }
+
         if (Input.GetButtonDown("Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (Input.GetButtonDown("LastCheckpoint"))
+        {
+            rb.position = checkpoint.transform.position;
         }
 
         if (Input.GetButtonDown("Swap"))
         {
             if (player2.GetComponent<Player2Movement>().IsReady())
             {
+                ready = false;
+                player2.GetComponent<Player2Movement>().SetReady(false);
                 swap();
                 readytext.SetActive(false);
             }
@@ -82,16 +125,42 @@ public class Player1Movement : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
         }
 
-        if (Input.GetButton("Sprint"))
-        {
-            maxSpeed = 10f;
-        }
-
         if (grounded)
         {
             // Get the extent to which the player is currently pressing left or right
             float h = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(h * maxSpeed, rb.velocity.y);
+            if (Math.Abs(h) < 0.1f)
+            {
+                h = 0;
+            }
+            float newspeed = 0;
+            if ((rb.velocity.x > 0 && h < 0) || (rb.velocity.x < 0 && h > 0))
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
+            float limitSpeed = maxSpeed;
+            if (Input.GetButton("Sprint"))
+            {
+                limitSpeed = maxSpeed * sprintMod;
+                newspeed = rb.velocity.x + (h * limitSpeed) / 5;
+            } else
+            {
+                newspeed = rb.velocity.x + (h * limitSpeed) / 5;
+            }
+            if (newspeed > limitSpeed)
+            {
+                newspeed = limitSpeed;
+            }
+            else if (newspeed < -1 * limitSpeed)
+            {
+                newspeed = -1 * limitSpeed;
+            }
+            if (h == 0)
+            {
+                //Slow down quicker than accelerate
+                newspeed = 0f;
+            }
+            rb.velocity = new Vector2(newspeed, rb.velocity.y);
             // Check which way the player is facing 
             // and call reverseImage if neccessary
             if (h < 0 && !facingLeft)
@@ -125,7 +194,11 @@ public class Player1Movement : MonoBehaviour
         Vector2 pos2 = player2.GetComponent<Rigidbody2D>().position;
 
         rb.position = pos2;
+        //Swap Checkpoints as well
         player2.GetComponent<Rigidbody2D>().position = pos1;
+        GameObject c = player2.GetComponent<Player2Movement>().checkpoint;
+        player2.GetComponent<Player2Movement>().checkpoint = checkpoint;
+        checkpoint = c;
     }
 
 }

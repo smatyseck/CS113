@@ -18,6 +18,10 @@ public class SwapOff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!gameObject.activeSelf)
+        {
+            timeremaining = interval;
+        }
         if (gameObject.activeSelf && timeremaining <= 0)
         {
             player1.GetComponent<Player1Movement>().SetReady(false);
