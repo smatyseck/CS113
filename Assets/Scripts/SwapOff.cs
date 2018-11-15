@@ -24,8 +24,8 @@ public class SwapOff : MonoBehaviour {
         }
         if (gameObject.activeSelf && timeremaining <= 0)
         {
-            player1.GetComponent<Player1Movement>().SetReady(false);
-            player2.GetComponent<Player2Movement>().SetReady(false);
+            player1.GetComponent<PlayerMovement>().SetReady(false);
+            player2.GetComponent<PlayerMovement>().SetReady(false);
             gameObject.SetActive(false);
             timeremaining = interval;
         }
@@ -34,10 +34,10 @@ public class SwapOff : MonoBehaviour {
         {
             Text text = gameObject.GetComponent<Text>();
             timeremaining -= Time.deltaTime;
-            if (player1.GetComponent<Player1Movement>().IsReady())
+            if (player1.GetComponent<PlayerMovement>().IsReady())
             {
                 text.text = "Player 1 is Ready to Swap\n" + Mathf.Ceil(timeremaining).ToString();
-            } else if (player2.GetComponent<Player2Movement>().IsReady())
+            } else if (player2.GetComponent<PlayerMovement>().IsReady())
             {
                 text.text = "Player 2 is Ready to Swap\n" + Mathf.Ceil(timeremaining).ToString();
             }

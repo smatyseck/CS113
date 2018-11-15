@@ -9,12 +9,23 @@ public class PauseMenu : MonoBehaviour {
 	void Start () {
         canvas.SetActive(false);
 	}
+
+    public void Activate()
+    {
+        Time.timeScale = 0;
+        gameObject.SetActive(true);
+        canvas.SetActive(true);
+    }
+
+    public void Deactivate()
+    {
+        Time.timeScale = 1;
+        gameObject.SetActive(false);
+        canvas.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Cancel"))
-        {
-            canvas.SetActive(true);
-        }
+		
 	}
 }
