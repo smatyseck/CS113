@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Checkpoint
   - Zapper
+  - Ground
+  - Exit
   layers:
   - Default
   - TransparentFX
