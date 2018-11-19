@@ -451,6 +451,7 @@ MonoBehaviour:
   readytext: {fileID: 1940401705515964}
   maxSpeed: 5
   sprintMod: 1.5
+  accelRate: 15
   checkpoint: {fileID: 1028465826236202}
 --- !u!114 &114014441630549272
 MonoBehaviour:
@@ -469,6 +470,7 @@ MonoBehaviour:
   readytext: {fileID: 1940401705515964}
   maxSpeed: 5
   sprintMod: 1.5
+  accelRate: 15
   checkpoint: {fileID: 1391713232670136}
 --- !u!114 &114197617397673682
 MonoBehaviour:

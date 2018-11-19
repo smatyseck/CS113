@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float accelRate = 15; // inverse of rate that players accel at (15 means 15 updates until max speed)
     private bool grounded = false;
     private bool ready = false;
+    private bool inExit = false;
 
     // Start facing right (like the sprite-sheet)
     private bool facingLeft = false;
@@ -59,15 +60,20 @@ public class PlayerMovement : MonoBehaviour
             }
 			checkpoint = col.gameObject;
 		}
-		if (col.tag == "Zapper") // If you walk into a Zapper then send the player back to their checkpoint and set all velocities to 0
+		else if (col.tag == "Zapper") // If you walk into a Zapper then send the player back to their checkpoint and set all velocities to 0
 		{
 			this.transform.position = checkpoint.transform.position;
             rb.velocity = new Vector2(0, 0);
 		}
-        if (col.tag == "Ground")
+        else if (col.tag == "Exit")
+        {
+            inExit = true;
+        }
+        else if (col.tag == "Ground")
         {
             grounded = true;
         }
+
     }
 
     void OnTriggerStay2D(Collider2D col)
@@ -83,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
         {
             grounded = false;
         }
+        else if (col.tag == "Exit")
+        {
+            inExit = false;
+        }
     }
 
     void Update()
@@ -90,6 +100,10 @@ public class PlayerMovement : MonoBehaviour
         if (Time.timeScale == 0) // Do not want users to be able to act when in a menu
         {
             return;
+        }
+        if (playerNum == 1 && inExit && otherPlayer.GetComponent<PlayerMovement>().inExit)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         if (Input.GetButtonDown("Reset" + playerNum)) // Reload current level
         {
@@ -139,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 float limitSpeed = maxSpeed;
-                if (Input.GetButtonDown("Sprint" + playerNum)) // If players are sprinting, allow for speed over max
+                if (Input.GetButton("Sprint" + playerNum)) // If players are sprinting, allow for speed over max
                 {
                     limitSpeed = maxSpeed * sprintMod;
                 }
