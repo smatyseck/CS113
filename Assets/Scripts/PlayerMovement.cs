@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject readytext;
     public float maxSpeed = 5f;
     public float sprintMod = 1.5f;
-    public float accelRate = 15; // inverse of rate that players accel at (15 means 15 updates until max speed)
+    public float accelRate = 15f; // inverse of rate that players accel at (15 means 15 updates until max speed)
     private bool grounded = false;
     private bool ready = false;
     private bool inExit = false;
@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded) // Players can only move when grounded (no air movement)
         {
-            float h = Input.GetAxis("Horizontal" + playerNum); // Get the extent to which the player is currently pressing left or right
+            float h = Input.GetAxisRaw("Horizontal" + playerNum); // Get the extent to which the player is currently pressing left or right
             if (Math.Abs(h) < 0.1f) // Some joysticks have an odd sensitivity and move when not pressed, this prevents that
             {
                 h = 0;
