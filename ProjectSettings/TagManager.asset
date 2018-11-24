@@ -8,6 +8,8 @@ TagManager:
   - Zapper
   - Ground
   - Exit
+  - Cannon
+  - Wall
   layers:
   - Default
   - TransparentFX

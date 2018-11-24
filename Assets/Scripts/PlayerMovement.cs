@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded = false;
     private bool ready = false;
     private bool inExit = false;
+    public bool shot = false;
+    private bool atCannon = false;
 
     // Start facing right (like the sprite-sheet)
     private bool facingLeft = false;
@@ -64,7 +66,14 @@ public class PlayerMovement : MonoBehaviour
 		{
 			this.transform.position = checkpoint.transform.position;
             rb.velocity = new Vector2(0, 0);
+            shot = false;
+            rb.gravityScale = 1f;
 		}
+        else if (col.tag == "Cannon")
+        {
+            atCannon = true;
+            Debug.Log("At Cannon");
+        }
         else if (col.tag == "Exit")
         {
             inExit = true;
@@ -72,6 +81,13 @@ public class PlayerMovement : MonoBehaviour
         else if (col.tag == "Ground")
         {
             grounded = true;
+        } else if (col.tag == "Wall")
+        {
+            if (shot)
+            {
+                rb.gravityScale = 1f;
+                shot = false;
+            }
         }
 
     }
@@ -93,6 +109,10 @@ public class PlayerMovement : MonoBehaviour
         {
             inExit = false;
         }
+        else if (col.tag == "Cannon")
+        {
+            atCannon = false;
+        }
     }
 
     void Update()
@@ -108,6 +128,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Reset" + playerNum)) // Reload current level
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (atCannon) //In or shot out of a cannon
+        {
+            if (shot)
+            {
+                grounded = false;
+                rb.velocity = new Vector2(10, 0);
+            } else if ( atCannon && Input.GetButtonDown("Jump" + playerNum))
+            {
+                shot = true;
+                grounded = false;
+                rb.velocity = new Vector2(10, 0);
+                rb.position = new Vector2(rb.position.x, rb.position.y + .25f);
+                rb.gravityScale = 0;
+            } 
         }
 
         if (Input.GetButtonDown("Swap" + playerNum))
@@ -203,6 +239,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 pos1 = rb.position;
         Vector2 pos2 = otherPlayer.GetComponent<Rigidbody2D>().position;
+        if (shot) {
+            pos2 = new Vector2(rb.position.x, rb.position.y + .25f);
+        }
+        if (otherPlayer.GetComponent<PlayerMovement>().shot)
+        {
+            pos1 = new Vector2(rb.position.x, rb.position.y + .25f);
+        }
+        
 
         rb.position = pos2;
         otherPlayer.GetComponent<Rigidbody2D>().position = pos1;
