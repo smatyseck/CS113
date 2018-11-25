@@ -2163,6 +2163,17 @@ Prefab:
       propertyPath: accelRate
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 212202927459233294, guid: 90cfae2c33feaf84b8b1c9ec2a58d3fc,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300024, guid: 005ea692c388abd46b271fb46cb7203b,
+        type: 3}
+    - target: {fileID: 95205124991629750, guid: 90cfae2c33feaf84b8b1c9ec2a58d3fc,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a03fc0c0ec0d92a4dae20d393317ff27, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90cfae2c33feaf84b8b1c9ec2a58d3fc, type: 2}
   m_IsPrefabAsset: 0

@@ -425,7 +425,7 @@ Animator:
   m_GameObject: {fileID: 1377354934275604}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0d72a1a31c3b70d488765e964d23f390, type: 2}
+  m_Controller: {fileID: 9100000, guid: e2e87d2cf4902064dbaea6c9b2c1f51b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -452,6 +452,7 @@ MonoBehaviour:
   maxSpeed: 5
   sprintMod: 1.5
   accelRate: 15
+  shot: 0
   checkpoint: {fileID: 1028465826236202}
 --- !u!114 &114014441630549272
 MonoBehaviour:
@@ -471,6 +472,7 @@ MonoBehaviour:
   maxSpeed: 5
   sprintMod: 1.5
   accelRate: 15
+  shot: 0
   checkpoint: {fileID: 1391713232670136}
 --- !u!114 &114197617397673682
 MonoBehaviour:
