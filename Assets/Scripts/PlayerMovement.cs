@@ -7,6 +7,7 @@ using System;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Tooltip("Either 1 or 2 to signify which player it is")]
     public int playerNum = 1; // 1 or 2 
     public GameObject otherPlayer; 
     public float jumpForce = 350;
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public bool shot = false;
     private bool atCannon = false;
 
-	private CannonController cannonScript = null;
+    private CannonController cannonScript = null;
 
     // Start facing right (like the sprite-sheet)
     private bool facingLeft = false;
@@ -253,6 +254,9 @@ public class PlayerMovement : MonoBehaviour
 
         rb.position = pos2;
         otherPlayer.GetComponent<Rigidbody2D>().position = pos1;
+        
+        SlowTime.SetSlow(2f);
+
         //Swap Checkpoints as well
         GameObject c = otherPlayer.GetComponent<PlayerMovement>().checkpoint;
         otherPlayer.GetComponent<PlayerMovement>().checkpoint = checkpoint;

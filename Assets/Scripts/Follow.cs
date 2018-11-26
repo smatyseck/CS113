@@ -12,7 +12,7 @@ public class Follow : MonoBehaviour
     // LateUpdate applies after physics / rigidbody related stuff happens
     void LateUpdate()
     {
-        float interpolation = speed * Time.deltaTime;
+        float interpolation = speed * Time.fixedUnscaledDeltaTime;
 
         Vector3 position = this.transform.position;
         position.y = Mathf.Lerp(this.transform.position.y, objectToFollow.transform.position.y + distance, interpolation);
