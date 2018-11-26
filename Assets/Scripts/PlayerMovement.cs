@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public bool shot = false;
     private bool atCannon = false;
 
+	private CannonController cannonScript = null;
+
     // Start facing right (like the sprite-sheet)
     private bool facingLeft = false;
 
@@ -72,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         else if (col.tag == "Cannon")
         {
             atCannon = true;
+			cannonScript = col.gameObject.GetComponent<CannonController> ();
             Debug.Log("At Cannon");
         }
         else if (col.tag == "Exit")
@@ -135,12 +138,12 @@ public class PlayerMovement : MonoBehaviour
             if (shot)
             {
                 grounded = false;
-                rb.velocity = new Vector2(10, 0);
+				rb.velocity = new Vector2(cannonScript.getX(), cannonScript.getY());
             } else if ( atCannon && Input.GetButtonDown("Jump" + playerNum))
             {
                 shot = true;
                 grounded = false;
-                rb.velocity = new Vector2(10, 0);
+				rb.velocity = new Vector2(cannonScript.getX(), cannonScript.getY());
                 rb.position = new Vector2(rb.position.x, rb.position.y + .25f);
                 rb.gravityScale = 0;
             } 
