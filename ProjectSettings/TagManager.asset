@@ -10,6 +10,7 @@ TagManager:
   - Exit
   - Cannon
   - Wall
+  - CameraHolder
   layers:
   - Default
   - TransparentFX

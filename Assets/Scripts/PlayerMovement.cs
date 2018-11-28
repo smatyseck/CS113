@@ -37,6 +37,16 @@ public class PlayerMovement : MonoBehaviour
 	//Checkpoint Tracking
 	public GameObject checkpoint;
 
+    // Camera Tracking
+    private enum CameraTrackingEnum {
+        ALWAYS_TRACK_PLAYER,
+        FOLLOW_PLAYER_ON_LEVEL
+    }
+    [SerializeField]
+    private CameraTrackingEnum CameraTrackType;
+    private Camera cameraBot;
+    private Camera cameraTop;
+    
     public bool IsReady()
     {
         // Check if ready to swap
@@ -53,6 +63,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        Transform cameraHolder = GameObject.FindGameObjectWithTag("CameraHolder").transform;
+        cameraTop = cameraHolder.GetChild(0).GetComponent<Camera>();
+        cameraBot = cameraHolder.GetChild(1).GetComponent<Camera>();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -239,29 +252,57 @@ public class PlayerMovement : MonoBehaviour
         rb.transform.localScale = theScale;
     }
 
-    void swap()
-    {
+    void swap() {
         readytext.GetComponent<SwapOff>().resetTime();
         Vector2 pos1 = rb.position;
         Vector2 pos2 = otherPlayer.GetComponent<Rigidbody2D>().position;
         if (shot) {
             pos2 = new Vector2(pos2.x, pos2.y + .25f);
         }
-        if (otherPlayer.GetComponent<PlayerMovement>().shot)
-        {
+        if (otherPlayer.GetComponent<PlayerMovement>().shot) {
             pos1 = new Vector2(rb.position.x, rb.position.y + .25f);
         }
-        
 
-        rb.position = pos2;
-        otherPlayer.GetComponent<Rigidbody2D>().position = pos1;
-        
+        transform.position = pos2;
+        otherPlayer.transform.position = pos1;
+        // Simply look at y position and adjust which player's on top track and which is on bottom track
+        if (CameraTrackType == CameraTrackingEnum.FOLLOW_PLAYER_ON_LEVEL) {
+            if (pos1.y > pos2.y) {
+                adjustCameraTrack(otherPlayer, gameObject);
+            }
+            else {
+                adjustCameraTrack(gameObject, otherPlayer);
+            }
+        }
+
         SlowTime.SetSlow(2f);
-
+        
         //Swap Checkpoints as well
         GameObject c = otherPlayer.GetComponent<PlayerMovement>().checkpoint;
         otherPlayer.GetComponent<PlayerMovement>().checkpoint = checkpoint;
         checkpoint = c;
+    }
+
+    void adjustCameraTrack(GameObject newTop, GameObject newBot) {
+        Follow topFollow = cameraTop.GetComponent<Follow>();
+        topFollow.objectToFollow = newTop;
+
+        Follow botFollow = cameraBot.GetComponent<Follow>();
+        botFollow.objectToFollow = newBot;
+
+        StopAllCoroutines();
+        // Pause for 2 frames
+        StartCoroutine(pauseCameras(new Follow[] { topFollow, botFollow }, Time.fixedUnscaledDeltaTime * 2));
+    }
+
+    IEnumerator pauseCameras(Follow[] cameraFollows, float pauseTime = .05f) {
+        foreach (Follow camFollow in cameraFollows) {
+            camFollow.follow = false;
+        }
+        yield return new WaitForSeconds(pauseTime);
+        foreach (Follow camFollow in cameraFollows) {
+            camFollow.follow = true;
+        }
     }
 
 }

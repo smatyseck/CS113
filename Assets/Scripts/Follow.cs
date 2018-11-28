@@ -9,9 +9,13 @@ public class Follow : MonoBehaviour
     public float speed = 2.0f;
     public float distance;
 
-    // LateUpdate applies after physics / rigidbody related stuff happens
-    void LateUpdate()
+    public bool follow = true;
+
+    void Update()
     {
+        if (!follow)
+            return;
+
         float interpolation = speed * Time.fixedUnscaledDeltaTime;
 
         Vector3 position = this.transform.position;
