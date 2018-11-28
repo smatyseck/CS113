@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SwapOff : MonoBehaviour {
 
-    public float interval = 3f;
+    public float interval = 5f;
     private float timeremaining;
     public GameObject player1;
     public GameObject player2;
@@ -14,6 +14,11 @@ public class SwapOff : MonoBehaviour {
     void Start() {
         timeremaining = interval;
         gameObject.SetActive(false);
+    }
+
+    public void resetTime()
+    {
+        timeremaining = interval;
     }
 
     // Update is called once per frame

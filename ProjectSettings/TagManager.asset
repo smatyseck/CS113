@@ -50,6 +50,12 @@ TagManager:
   - name: Sky
     uniqueID: 3035534573
     locked: 0
+  - name: Coverup
+    uniqueID: 544309961
+    locked: 0
+  - name: Wall
+    uniqueID: 947036011
+    locked: 0
   - name: Ground
     uniqueID: 2700591915
     locked: 0

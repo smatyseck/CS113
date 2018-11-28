@@ -241,10 +241,11 @@ public class PlayerMovement : MonoBehaviour
 
     void swap()
     {
+        readytext.GetComponent<SwapOff>().resetTime();
         Vector2 pos1 = rb.position;
         Vector2 pos2 = otherPlayer.GetComponent<Rigidbody2D>().position;
         if (shot) {
-            pos2 = new Vector2(rb.position.x, rb.position.y + .25f);
+            pos2 = new Vector2(pos2.x, pos2.y + .25f);
         }
         if (otherPlayer.GetComponent<PlayerMovement>().shot)
         {
