@@ -6,13 +6,12 @@ public class SlowTime : MonoBehaviour {
 
     private static float slowTotalTime = 1f;
     private static float currentSlowTime;
-
+    
     void Start() {
         currentSlowTime = slowTotalTime;
     }
 
     void Update () {
-        print(currentSlowTime + " | " + slowTotalTime);
         if (currentSlowTime < slowTotalTime) {
             
             currentSlowTime += Time.fixedUnscaledDeltaTime / slowTotalTime;
@@ -23,11 +22,11 @@ public class SlowTime : MonoBehaviour {
         }
     }
 
-    public static void SetSlow(float? newSlowTime = null, float timeScaleStartValue = .2f) {
+    public static void SetSlow(float? newSlowTime = null, float timeScaleStartValue = .45f) {
         if (newSlowTime.HasValue) {
             slowTotalTime = newSlowTime.Value;
         }
-
+        
         currentSlowTime = timeScaleStartValue * slowTotalTime;
     }
 
