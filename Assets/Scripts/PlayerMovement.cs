@@ -89,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
         {
             atCannon = true;
 			cannonScript = col.gameObject.GetComponent<CannonController> ();
-            Debug.Log("At Cannon");
         }
         else if (col.tag == "Exit")
         {
