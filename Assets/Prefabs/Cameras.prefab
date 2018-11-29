@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4218251819724516}
   m_Layer: 0
   m_Name: Cameras
-  m_TagString: Untagged
+  m_TagString: CameraHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -213,6 +213,7 @@ MonoBehaviour:
   objectToFollow: {fileID: 0}
   speed: 50
   distance: 2.5
+  follow: 1
 --- !u!114 &114343725311236044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,6 +228,7 @@ MonoBehaviour:
   objectToFollow: {fileID: 0}
   speed: 50
   distance: 2.5
+  follow: 1
 --- !u!124 &124021142696350292
 Behaviour:
   m_ObjectHideFlags: 1
