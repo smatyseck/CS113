@@ -538,7 +538,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 170
-        width: 32
+        width: 40
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -548,26 +548,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 17257065a2a8c614e801d0f093fc024c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prisonTile_24
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 170
-        width: 8
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df02e77d17d21ea4197cc66eaffa5db4
       vertices: []
       indices: 
       edges: []
@@ -661,7 +641,7 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -681,13 +661,33 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: d87f71ee5683724469b1b376f19561fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: prisonTile_24
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 170
+        width: 8
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bac679badce2d34cbe787aabce81f24
       vertices: []
       indices: 
       edges: []

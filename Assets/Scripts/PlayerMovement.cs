@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private bool inExit = false;
     public bool shot = false;
     private bool atCannon = false;
+    private bool onButton = false;
+    private GameObject button;
 
     private CannonController cannonScript = null;
 
@@ -85,8 +87,9 @@ public class PlayerMovement : MonoBehaviour
             shot = false;
             rb.gravityScale = 1f;
 		}
-        else if (col.tag == "Cannon")
+        else if (col.tag == "Cannon" && col.GetComponent<CannonController>().isOn)
         {
+            col.GetComponent<CannonController>().ToggleTextOn();
             atCannon = true;
 			cannonScript = col.gameObject.GetComponent<CannonController> ();
         }
@@ -104,6 +107,10 @@ public class PlayerMovement : MonoBehaviour
                 rb.gravityScale = 1f;
                 shot = false;
             }
+        } else if (col.tag == "Button")
+        {
+            onButton = true;
+            button = col.gameObject;
         }
 
     }
@@ -127,7 +134,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (col.tag == "Cannon")
         {
+            col.GetComponent<CannonController>().ToggleTextOff();
             atCannon = false;
+        }
+        else if (col.tag == "Button")
+        {
+            onButton = false;
+            button = null;
         }
     }
 
@@ -144,6 +157,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Reset" + playerNum)) // Reload current level
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (onButton && rb.velocity.y == 0)
+        {
+            button.GetComponent<ButtonObject>().Press();
         }
 
         if (atCannon) //In or shot out of a cannon
