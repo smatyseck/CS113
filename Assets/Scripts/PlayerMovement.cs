@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxSpeed = 5f;
     public float sprintMod = 1.5f;
     public float accelRate = 15f; // inverse of rate that players accel at (15 means 15 updates until max speed)
+    public float airAccelModifier = .25f; // how much the speed will change while in air in respect to ground
     private bool grounded = false;
     private bool ready = false;
     private bool inExit = false;
@@ -206,49 +207,50 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump" + playerNum) && grounded) // Players can only jump when grounded
         {
             rb.AddForce(Vector2.up * jumpForce);
+            grounded = false; 
         }
 
-        if (grounded) // Players can only move when grounded (no air movement)
+        float h = Input.GetAxisRaw("Horizontal" + playerNum); // Get the extent to which the player is currently pressing left or right
+        if (Math.Abs(h) < 0.1f) // Some joysticks have an odd sensitivity and move when not pressed, this prevents that
         {
-            float h = Input.GetAxisRaw("Horizontal" + playerNum); // Get the extent to which the player is currently pressing left or right
-            if (Math.Abs(h) < 0.1f) // Some joysticks have an odd sensitivity and move when not pressed, this prevents that
-            {
-                h = 0;
-            }
-            float newspeed = 0;
-            if ((rb.velocity.x > 0 && h < 0) || (rb.velocity.x < 0 && h > 0)) // Make players instantly move in the opposite direction
-            {
-                rb.velocity = new Vector2(0, rb.velocity.y);
-            }
-            else
-            {
-                float limitSpeed = maxSpeed;
-                if (Input.GetButton("Sprint" + playerNum)) // If players are sprinting, allow for speed over max
-                {
-                    limitSpeed = maxSpeed * sprintMod;
-                }
-                newspeed = rb.velocity.x + (h * limitSpeed) / accelRate;
-                if (newspeed > limitSpeed) // Restrict right moment to below the limit
-                {
-                    newspeed = limitSpeed;
-                }
-                else if (newspeed < -1 * limitSpeed) // Restrict left movement to below limit
-                {
-                    newspeed = -1 * limitSpeed;
-                }
-                if (h == 0) // Make players instantly stop when the let go of the movement button
-                {
-                    newspeed = 0f;
-                }
-                rb.velocity = new Vector2(newspeed, rb.velocity.y);
-            }
-            // Check which way the player is facing 
-            // and call reverseImage if neccessary
-            if (h < 0 && !facingLeft)
-                reverseImage();
-            else if (h > 0 && facingLeft)
-                reverseImage();
+            h = 0;
         }
+        float newspeed = 0;
+        // Make players instantly move in the opposite direction while grounded
+        if (((rb.velocity.x > 0 && h < 0) || (rb.velocity.x < 0 && h > 0)) && grounded) 
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else
+        {
+            float limitSpeed = maxSpeed;
+            if (Input.GetButton("Sprint" + playerNum)) // If players are sprinting, allow for speed over max
+            {
+                limitSpeed = maxSpeed * sprintMod;
+            }
+            float speedChange = (h * limitSpeed) / accelRate;
+            speedChange *= grounded ? 1 : airAccelModifier;
+            newspeed = rb.velocity.x + speedChange;
+            if (newspeed > limitSpeed) // Restrict right moment to below the limit
+            {
+                newspeed = limitSpeed;
+            }
+            else if (newspeed < -1 * limitSpeed) // Restrict left movement to below limit
+            {
+                newspeed = -1 * limitSpeed;
+            }
+            if (h == 0 && grounded) // Make players instantly stop when the let go of the movement button
+            {
+                newspeed = 0f;
+            }
+            rb.velocity = new Vector2(newspeed, rb.velocity.y);
+        }
+        // Check which way the player is facing 
+        // and call reverseImage if neccessary
+        if (h < 0 && !facingLeft)
+            reverseImage();
+        else if (h > 0 && facingLeft)
+            reverseImage();
 
         anim.SetBool("grounded", grounded);
         anim.SetFloat("speedY", rb.velocity.y);

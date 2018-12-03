@@ -18,12 +18,17 @@ TextureImporter:
     21300026: BigChicken_13
     21300028: BigChicken_14
     21300030: BigChicken_15
-    21300032: BigChicken_16
+    21300032: BigChicken_Swap0
     21300034: BigChicken_17
     21300036: BigChicken_18
     21300038: BigChicken_19
-    21300040: BigChicken_20
-    21300042: BigChicken_21
+    21300040: BigChicken_Swap1
+    21300042: BigChicken_Swap2
+    21300044: BigChicken_Fall0
+    21300046: BigChicken_Fall1
+    21300048: BigChicken_9
+    21300050: BigChicken_11
+    21300052: BigChicken_22
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -109,10 +114,10 @@ TextureImporter:
       name: BigChicken_JumpStart0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 667
-        width: 120
-        height: 101
+        x: 45
+        y: 673
+        width: 109
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,10 +134,10 @@ TextureImporter:
       name: BigChicken_1
       rect:
         serializedVersion: 2
-        x: 166
-        y: 667
-        width: 123
-        height: 101
+        x: 158
+        y: 673
+        width: 125
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,8 +154,8 @@ TextureImporter:
       name: BigChicken_2
       rect:
         serializedVersion: 2
-        x: 303
-        y: 670
+        x: 287
+        y: 678
         width: 112
         height: 100
       alignment: 0
@@ -169,10 +174,10 @@ TextureImporter:
       name: BigChicken_3
       rect:
         serializedVersion: 2
-        x: 419
-        y: 668
-        width: 125
-        height: 100
+        x: 424
+        y: 679
+        width: 123
+        height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,8 +274,8 @@ TextureImporter:
       name: BigChicken_JumpEnd8
       rect:
         serializedVersion: 2
-        x: 1068
-        y: 678
+        x: 1072
+        y: 674
         width: 110
         height: 101
       alignment: 0
@@ -289,9 +294,9 @@ TextureImporter:
       name: BigChicken_WalkStart9
       rect:
         serializedVersion: 2
-        x: 24
-        y: 525
-        width: 121
+        x: 25
+        y: 548
+        width: 124
         height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -309,9 +314,9 @@ TextureImporter:
       name: BigChicken_10
       rect:
         serializedVersion: 2
-        x: 166
-        y: 525
-        width: 119
+        x: 152
+        y: 548
+        width: 116
         height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -329,8 +334,8 @@ TextureImporter:
       name: BigChicken_WalkEnd11
       rect:
         serializedVersion: 2
-        x: 308
-        y: 525
+        x: 282
+        y: 548
         width: 116
         height: 98
       alignment: 0
@@ -349,8 +354,8 @@ TextureImporter:
       name: BigChicken_12
       rect:
         serializedVersion: 2
-        x: 43
-        y: 391
+        x: 44
+        y: 382
         width: 82
         height: 101
       alignment: 0
@@ -369,8 +374,8 @@ TextureImporter:
       name: BigChicken_13
       rect:
         serializedVersion: 2
-        x: 152
-        y: 391
+        x: 153
+        y: 382
         width: 82
         height: 101
       alignment: 0
@@ -389,8 +394,8 @@ TextureImporter:
       name: BigChicken_14
       rect:
         serializedVersion: 2
-        x: 254
-        y: 391
+        x: 255
+        y: 382
         width: 82
         height: 101
       alignment: 0
@@ -426,13 +431,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigChicken_16
+      name: BigChicken_Swap0
       rect:
         serializedVersion: 2
-        x: 54
-        y: 321
-        width: 54
-        height: 51
+        x: 16
+        y: 240
+        width: 170
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,33 +491,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigChicken_19
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 240
-        width: 170
-        height: 81
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75386e6699ef065489cc4c4f7473d3ad
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BigChicken_20
+      name: BigChicken_Swap1
       rect:
         serializedVersion: 2
         x: 210
         y: 240
         width: 168
-        height: 82
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -526,13 +511,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BigChicken_21
+      name: BigChicken_Swap2
       rect:
         serializedVersion: 2
         x: 416
         y: 240
         width: 171
-        height: 93
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,6 +526,106 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1cef5925f9336b540a9cad7e63ed47e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigChicken_Fall0
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 541
+        width: 134
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5df40422b00463c459383e8aca31b72e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigChicken_Fall1
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 534
+        width: 135
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274586cc31947c24b9a30a37602e5292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigChicken_9
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 534
+        width: 119
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4333a3c9ca5032542a85c0c654575779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigChicken_11
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 381
+        width: 117
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4515b04ef62c64a86118e6dfd9ee92
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigChicken_22
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 101
+        width: 165
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad0f017696768c24cbfd759eb1e31e1d
       vertices: []
       indices: 
       edges: []
