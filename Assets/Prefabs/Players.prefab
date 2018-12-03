@@ -303,7 +303,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1391713232670136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.8, y: -2.5, z: -0.06393668}
+  m_LocalPosition: {x: -48.41, y: -2.5, z: -0.06393668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848848090479680}
@@ -329,7 +329,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028465826236202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.7, y: 12.48, z: -0.06393668}
+  m_LocalPosition: {x: -96.01, y: 34, z: -0.06393668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4848848090479680}
@@ -407,7 +407,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377354934275604}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.849998, y: -2.0399964, z: 0.03606322}
+  m_LocalPosition: {x: -48.46, y: -2.0399964, z: 0.03606322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4024088040047100}
@@ -450,7 +450,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1416136345567036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.083741575, y: 0.64515907, z: -0.03606322}
+  m_LocalPosition: {x: 0.7, y: 0.64515907, z: -0.03606322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224279184334116796}
@@ -468,7 +468,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1161211780890686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.669998, y: 13.085157, z: 0.03606322}
+  m_LocalPosition: {x: -96.08, y: 34.27, z: 0.03606322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4277615663167822}
@@ -972,6 +972,7 @@ MonoBehaviour:
   maxSpeed: 5
   sprintMod: 1.5
   accelRate: 13
+  airAccelModifier: 0.1
   shot: 0
   checkpoint: {fileID: 1028465826236202}
   CameraTrackType: 1
@@ -993,6 +994,7 @@ MonoBehaviour:
   maxSpeed: 5
   sprintMod: 1.5
   accelRate: 13
+  airAccelModifier: 0.1
   shot: 0
   checkpoint: {fileID: 1391713232670136}
   CameraTrackType: 1

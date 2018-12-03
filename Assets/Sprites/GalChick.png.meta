@@ -19,12 +19,36 @@ TextureImporter:
     21300028: GalChick_29
     21300030: GalChick_30
     21300032: GalChick_31
-    21300034: GalChick_32
-    21300036: GalChick_33
+    21300034: GalChick_Swap0
+    21300036: GalChick_Swap1
     21300038: GalChick_34
-    21300040: GalChick_35
+    21300040: GalChick_Swap2
     21300042: GalChick_40
     21300044: GalChick_StartRun
+    21300046: GalChick_4
+    21300048: GalChick_5
+    21300050: GalChick_6
+    21300052: GalChick_7
+    21300054: GalChick_11
+    21300056: GalChick_12
+    21300058: GalChick_13
+    21300060: GalChick_14
+    21300062: GalChick_18
+    21300064: GalChick_19
+    21300066: GalChick_20
+    21300068: GalChick_25
+    21300070: GalChick_26
+    21300072: GalChick_27
+    21300074: GalChick_28
+    21300076: GalChick_36
+    21300078: GalChick_37
+    21300080: GalChick_38
+    21300082: GalChick_39
+    21300084: GalChick_41
+    21300086: GalChick_42
+    21300088: GalChick_43
+    21300090: GalChick_44
+    21300092: GalChick_45
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -115,7 +139,7 @@ TextureImporter:
         width: 112
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,7 +159,7 @@ TextureImporter:
         width: 125
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -155,7 +179,7 @@ TextureImporter:
         width: 112
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,7 +199,7 @@ TextureImporter:
         width: 123
         height: 101
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,7 +219,7 @@ TextureImporter:
         width: 124
         height: 98
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +239,7 @@ TextureImporter:
         width: 116
         height: 98
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,7 +259,7 @@ TextureImporter:
         width: 116
         height: 98
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,12 +294,12 @@ TextureImporter:
       name: GalChick_16
       rect:
         serializedVersion: 2
-        x: 762
+        x: 760
         y: 529
         width: 135
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -295,7 +319,7 @@ TextureImporter:
         width: 119
         height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,7 +339,7 @@ TextureImporter:
         width: 82
         height: 101
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -332,10 +356,10 @@ TextureImporter:
         serializedVersion: 2
         x: 157
         y: 403
-        width: 82
-        height: 101
+        width: 84
+        height: 100
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 1}
       outline: []
       physicsShape: []
@@ -355,7 +379,7 @@ TextureImporter:
         width: 82
         height: 101
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -375,33 +399,13 @@ TextureImporter:
         width: 81
         height: 74
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 47c146e840b8f3241b55fccc6d0a3989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GalChick_29
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 321
-        width: 54
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b8135b7f9f396149ab3612102f9480e
       vertices: []
       indices: 
       edges: []
@@ -427,35 +431,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GalChick_31
-      rect:
-        serializedVersion: 2
-        x: 462
-        y: 353
-        width: 21
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f67f414bdb91544382bb318a5e735ed
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GalChick_32
+      name: GalChick_Swap0
       rect:
         serializedVersion: 2
         x: 15
         y: 240
         width: 170
-        height: 81
+        height: 97
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,15 +451,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GalChick_33
+      name: GalChick_Swap1
       rect:
         serializedVersion: 2
-        x: 208
-        y: 306
-        width: 19
-        height: 11
+        x: 209
+        y: 240
+        width: 168
+        height: 97
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -493,7 +477,7 @@ TextureImporter:
         x: 209
         y: 240
         width: 168
-        height: 82
+        height: 98
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,15 +491,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GalChick_35
+      name: GalChick_Swap2
       rect:
         serializedVersion: 2
         x: 415
         y: 240
         width: 171
-        height: 93
+        height: 97
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -535,7 +519,7 @@ TextureImporter:
         width: 165
         height: 90
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -550,18 +534,538 @@ TextureImporter:
       name: GalChick_StartRun
       rect:
         serializedVersion: 2
-        x: 606
+        x: 607
         y: 536
         width: 134
         height: 98
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: ac6d2221abaa2194eb5f6a326d40845f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_4
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 712
+        width: 18
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5eddf3d4afbdb84b8e1eb7770fe1549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_5
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 712
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc99b31caa3a4ba41b92d7ce12460ef6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_6
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 713
+        width: 41
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beae41894b7e51c4f91518c74df14bd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_7
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 703
+        width: 25
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979e5e09586c5cb449e35d86290cd509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_11
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 570
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bdb85319bbdcd438a3cea4d653a569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_12
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 570
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657f8e3f5047f5148a325bdb8dd2311f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_13
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 570
+        width: 4
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ef463f97ae7aa4db889eb10ecf4301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_14
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 570
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1c48eae466da574b84344595e6627ad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_18
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 538
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c59f64ec1c65514a8be6b9bda2d6f88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_19
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 537
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7b1c3ba9ee64743aabb7a971807c6c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_20
+      rect:
+        serializedVersion: 2
+        x: 1145
+        y: 538
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3617b06ed2e2442b01f480a8cf0b1f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_25
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 411
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7896e4be587084c93f84484440afa7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_26
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 411
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077af5d5a2d2d97479ac12a3450d619d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_27
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 411
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2d9f4819f67d14489b4a3c4c97e751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_28
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 411
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2560dc3af2bfd3446b1c362d072ca8e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_29
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 268
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc8906bc1c431541b44cd6aad558546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_31
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 268
+        width: 30
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18bc7435c067cf748a0900237552a54a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_36
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 268
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead9ef73151b75746ad2869bc9a244b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_37
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 260
+        width: 20
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f6eef81f82b4546a849872cb9ee482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_38
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 116
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3229091f586987646ad0529ef554f696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_39
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 112
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555e7ed32ac97b94bbf9e1b6aafecc39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_41
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 116
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 262764cc171c9684684da80d19ef6b99
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_42
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 116
+        width: 4
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf4f21be02757a4f908baa943b79a19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_43
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 116
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b95c3fb3ec1eab4e82fb89c1821a4ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_44
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 116
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cff07a79c0107b42b860515cb1635ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalChick_45
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 110
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c52598649dfd884985cd8c214e97908
       vertices: []
       indices: 
       edges: []
