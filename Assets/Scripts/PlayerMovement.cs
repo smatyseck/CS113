@@ -219,7 +219,6 @@ public class PlayerMovement : MonoBehaviour
         // Make players instantly move in the opposite direction while grounded
         if (((rb.velocity.x > 0 && h < 0) || (rb.velocity.x < 0 && h > 0)) && grounded) 
         {
-            print("Touched here");
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
         else
