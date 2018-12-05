@@ -3285,7 +3285,7 @@ GameObject:
   - component: {fileID: 901424009}
   m_Layer: 0
   m_Name: Exit Door
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6662,7 +6662,7 @@ GameObject:
   - component: {fileID: 1964091777}
   m_Layer: 0
   m_Name: Exit Door
-  m_TagString: Untagged
+  m_TagString: Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

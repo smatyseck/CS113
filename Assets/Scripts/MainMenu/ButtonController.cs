@@ -15,7 +15,7 @@ public class ButtonController : MonoBehaviour
 
     public void SelectLevel(string levelname)
     {
-        selectedlevel = levelname;
+        SceneManager.LoadScene(levelname);
     }
 
     public void GoMainMenu()
