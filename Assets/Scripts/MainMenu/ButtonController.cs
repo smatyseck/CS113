@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonController : MonoBehaviour
 {
     public GameObject pausemenu;
-    static public string selectedlevel = "LevelJ1";
+    static public string selectedlevel = "Level1";
 
     public void StartGame()
     {
