@@ -1112,6 +1112,19 @@ Prefab:
       propertyPath: x_mag
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 114492734411729670, guid: 2ac90a9c64c13db4fba9d32cea6f5f78,
+        type: 2}
+      propertyPath: isOn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288171329884224, guid: 2ac90a9c64c13db4fba9d32cea6f5f78, type: 2}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838043157846540, guid: 2ac90a9c64c13db4fba9d32cea6f5f78, type: 2}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac90a9c64c13db4fba9d32cea6f5f78, type: 2}
   m_IsPrefabAsset: 0
