@@ -1777,11 +1777,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114492734411729670, guid: 2ac90a9c64c13db4fba9d32cea6f5f78,
-        type: 2}
-      propertyPath: isOn
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac90a9c64c13db4fba9d32cea6f5f78, type: 2}
   m_IsPrefabAsset: 0
@@ -2789,6 +2784,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114256254751718498, guid: d20219b6249705949acb98d2b6cc50c7,
+        type: 2}
+      propertyPath: objectToActivate
+      value: 
+      objectReference: {fileID: 993237759}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20219b6249705949acb98d2b6cc50c7, type: 2}
   m_IsPrefabAsset: 0
@@ -2839,6 +2839,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &993237759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1730392804016716, guid: 2ac90a9c64c13db4fba9d32cea6f5f78,
+    type: 2}
+  m_PrefabInternal: {fileID: 620919617}
 --- !u!1 &997324025
 GameObject:
   m_ObjectHideFlags: 0
