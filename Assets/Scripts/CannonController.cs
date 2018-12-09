@@ -21,6 +21,7 @@ public class CannonController : MonoBehaviour {
     public void TurnOn()
     {
         isOn = true;
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
     }
 
     public void ToggleTextOff()
@@ -36,7 +37,6 @@ public class CannonController : MonoBehaviour {
         if (isOn)
         {
             jumpText.SetActive(true);
-            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
         }
     }
 
