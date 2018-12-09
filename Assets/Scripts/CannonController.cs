@@ -11,6 +11,10 @@ public class CannonController : MonoBehaviour {
 
     private void Start()
     {
+        if (!isOn)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(0.3f, 0.3f, 0.3f);
+        }
         jumpText.SetActive(false);
     }
 
@@ -32,6 +36,7 @@ public class CannonController : MonoBehaviour {
         if (isOn)
         {
             jumpText.SetActive(true);
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1);
         }
     }
 

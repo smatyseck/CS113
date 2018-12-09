@@ -84,9 +84,10 @@ public class PlayerMovement : MonoBehaviour
 		else if (col.tag == "Zapper") // If you walk into a Zapper then send the player back to their checkpoint and set all velocities to 0
 		{
 			this.transform.position = checkpoint.transform.position;
+            col.GetComponent<AudioSource>().Play();
             rb.velocity = new Vector2(0, 0);
             shot = false;
-            rb.gravityScale = 1f;
+            rb.gravityScale = 0.8f;
 		}
         else if (col.tag == "Cannon" && col.GetComponent<CannonController>().isOn)
         {
@@ -105,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (shot)
             {
-                rb.gravityScale = 1f;
+                rb.gravityScale = 0.8f;
                 shot = false;
             }
         } else if (col.tag == "Button")
@@ -207,13 +208,14 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump" + playerNum) && grounded) // Players can only jump when grounded
         {
             rb.AddForce(Vector2.up * jumpForce);
-            grounded = false; 
+            grounded = false;
+            gameObject.GetComponent<AudioSource>().Play();
         }
 
         if (!shot)
         {
             float h = Input.GetAxisRaw("Horizontal" + playerNum); // Get the extent to which the player is currently pressing left or right
-            if (Math.Abs(h) < 0.1f) // Some joysticks have an odd sensitivity and move when not pressed, this prevents that
+            if (Math.Abs(Input.GetAxis("Horizontal" + playerNum)) < 0.1f) // Some joysticks have an odd sensitivity and move when not pressed, this prevents that
             {
                 h = 0;
             }

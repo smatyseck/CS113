@@ -6,6 +6,7 @@ public class ButtonObject : MonoBehaviour {
 
     public GameObject objectToActivate;
     public GameObject pressedButton;
+    public GameObject objectToDeactivate;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class ButtonObject : MonoBehaviour {
     public void Press()
     {
         objectToActivate.GetComponent<CannonController>().TurnOn();
+        objectToDeactivate.SetActive(false);
         pressedButton.SetActive(true);
         gameObject.SetActive(false);
     }
