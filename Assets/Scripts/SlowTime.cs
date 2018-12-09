@@ -12,6 +12,7 @@ public class SlowTime : MonoBehaviour {
     }
 
     void Update () {
+        if (Time.timeScale == 0) return;
         if (currentSlowTime < slowTotalTime) {
             
             currentSlowTime += Time.fixedUnscaledDeltaTime / slowTotalTime;

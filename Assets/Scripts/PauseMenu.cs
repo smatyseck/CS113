@@ -12,14 +12,14 @@ public class PauseMenu : MonoBehaviour {
 
     public void Activate()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         gameObject.SetActive(true);
         canvas.SetActive(true);
     }
 
     public void Deactivate()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
         canvas.SetActive(false);
     }
